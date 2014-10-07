@@ -3,6 +3,7 @@ Summary: a random password generator
 Name: %{name}
 %define version 0.0.1
 %define release 1
+Epoch: 8
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
