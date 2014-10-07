@@ -1,6 +1,7 @@
 Summary: a random password generator
 %define name randpw
 Name: %{name}
+Epoch: 9
 %define version 0.0.1
 %define release 1
 Version: %{version}
@@ -11,7 +12,7 @@ Group: SMEserver/addon
 Source: %{name}-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
-Requires: e-smith-release >= 8.0
+Requires: e-smith-release >= 9.0
 Buildrequires: e-smith-devtools
 AutoReqProv: no
 
