@@ -31,7 +31,8 @@ rm -rf $RPM_BUILD_ROOT
 (cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
 rm -f %{name}-%{version}-filelist
 /sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
-    --file /usr/bin/randpw 'attr(0754,root,root)' \> %{name}-%{version}-filelist
+    --file /usr/bin/randpw 'attr(0754,root,root)' \
+$RPM_BUILD_ROOT > %{name}-%{version}-filelist
 echo "%doc COPYING" >> %{name}-%{version}-filelist
 
 %clean
