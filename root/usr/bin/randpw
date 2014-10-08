@@ -1,9 +1,11 @@
 #!/bin/bash
- if [[ -z $1 ]]; then
-     echo "################################################################################################################################"
-     echo "you must give an argument in numeric where n is anything between 1 and 100000000000 : Usage: randpw [n]  "
-     echo "################################################################################################################################"
-     exit
+ if [[ ! $1 =~ ^[0-9]+$  ||  $1 == 0 ]]; then
+   echo "Invalid argument. Argument must be a positive number greater then zero";echo
+   echo "Usage: randpw [n]";echo
+   logger -i ERROR: no positive integer provided, no password generated -t randpw
+ else
+   < /dev/urandom tr -dc '_A-Z-a-z-0-9!?@+[](){}~<>*%^&#+=\.$:;,' | head -c${1:-$1};echo;
+   exit 0
  fi
 
-< /dev/urandom tr -dc '_A-Z-a-z-0-9!@+[](){}~<>*%^&#+=/$:;,?' | head -c${1:-$1};echo; 
+ exit 0 
