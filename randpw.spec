@@ -53,4 +53,4 @@ rm -rf %{name}-%{version}
 #%files -f %{name}-%{version}-filelist
 %files
 %defattr(-,root,root)
-%attr(750, root,root) /usr/bin/randpw
+%attr(754, root,root) /usr/bin/randpw
