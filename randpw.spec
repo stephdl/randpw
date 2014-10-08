@@ -12,7 +12,7 @@ Group: SMEserver/addon
 Source: %{name}-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
-Requires: e-smith-release >= 8.0
+#Requires: e-smith-release >= 8.0
 #Buildrequires: e-smith-devtools
 AutoReqProv: no
 
