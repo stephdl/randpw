@@ -13,7 +13,7 @@ Source: %{name}-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
 Requires: e-smith-release >= 8.0
-Buildrequires: e-smith-devtools
+#Buildrequires: e-smith-devtools
 AutoReqProv: no
 
 %description
@@ -35,10 +35,10 @@ a random password generator created by Hsing-Foo Wang hsingfoo@gmail.com
 %install
 rm -rf $RPM_BUILD_ROOT
 (cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
-rm -f %{name}-%{version}-filelist
-/sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
-    --file /usr/bin/randpw 'attr(0754,root,root)' \
-$RPM_BUILD_ROOT > %{name}-%{version}-filelist
+#rm -f %{name}-%{version}-filelist
+#/sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
+#    --file /usr/bin/randpw 'attr(0754,root,root)' \
+#$RPM_BUILD_ROOT > %{name}-%{version}-filelist
 echo "%doc COPYING" >> %{name}-%{version}-filelist
 
 %clean
@@ -50,6 +50,7 @@ rm -rf %{name}-%{version}
 %post
 %postun
 
-%files -f %{name}-%{version}-filelist
+#%files -f %{name}-%{version}-filelist
+%files
 %defattr(-,root,root)
-
+%attr(750, root,root) /usr/bin/randpw
