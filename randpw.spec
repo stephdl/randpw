@@ -5,7 +5,7 @@ Name: %{name}
 %define release 1
 Epoch: 8
 Version: %{version}
-Release: %{release}%{?dist}
+Release: %{release}
 License: GPL
 URL: http://www.contribs.org
 Group: SMEserver/addon
