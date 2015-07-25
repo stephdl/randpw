@@ -4,7 +4,7 @@ Name: %{name}
 %define version 0.1.0
 %define release 1
 Version: %{version}
-Release: %{release}.el5
+Release: %{release}%{?dist}
 License: GPL
 URL: http://www.contribs.org
 Group: SMEserver/addon
@@ -23,7 +23,6 @@ a random password generator created by Hsing-Foo Wang hsingfoo@gmail.com
 
 * Wed Oct 08 2014 stephane de Labrusse <stephdl@de-labrusse.fr> 0.0.3-1
 - new options added to prevent No argument, a negative number,
->>>>>>> sme9
 - zero and non integer argument or a no integer argument part
 - -1 0 123abc and abc by Hsing-Foo Wang hsingfoo@gmail.com
 
@@ -50,8 +49,4 @@ rm -rf %{name}-%{version}
 
 %files
 %defattr(-,root,root)
-%attr(754, root,root) /usr/bin/randpw
-<<<<<<< HEAD
-=======
-
->>>>>>> sme9
+%attr(755, root,root) /usr/bin/randpw
